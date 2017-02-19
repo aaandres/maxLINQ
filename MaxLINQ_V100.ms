@@ -4,7 +4,7 @@
 	MaxLINQ  -  LINQ functions for MaxScript
 	----------------------------------------------
 	----------------------------------------------
-	Copyright (c) 2017 Andrés Fernández Cruz (PathScripts)
+	Copyright (c) 2017 AndrÃ©s FernÃ¡ndez Cruz (PathScripts)
 	
 	Permission is hereby granted, free of charge, to any person obtaining a copy of this
 	software and associated documentation files (the "Software"), to deal in the Software
@@ -34,22 +34,22 @@
 	
 	Some intuitive simple examples are:
 		(_From #(1,2,3,4,5,6,7,8,9))._Where("x => x > 4")	--> returns #(5, 6, 7, 8, 9)
-		(_From "Hello World").Contains("World") 			--> returns True
-		(_From #{1..9}).Sum("x => x*2") 						--> returns 90
+		(_From "Hello World").Contains("World") 		--> returns True
+		(_From #{1..9}).Sum("x => x*2") 			--> returns 90
 		var = #(1,2,3,4,5); qvar = _From var; qvar.Sum#()	--> returns 15
 		var = #(1,2,3,4,5); qvar = _From var; (qvar.TakeWhile("q: x => x < 4")).Average#()	--> returns 2.0
 		str = @"C:\Test_Folder\myExample_01.ms"; (_From str)._Where("_")	--> returns #(8, 25)
 		str = @"C:\Test_Folder\myExample_01.ms"; (_From str).Last("_")		--> returns 25
-		(_From objects).Sort("node => node.name")		--> sort scene objects by name
+		(_From objects).Sort("node => node.name")				--> sort scene objects by name
 		
-	Copy this maxscript file into your scripts startup folder and enjoy with more than 40 sweet functions
-	to query arrays of any type and strings.
+	Copy this maxscript file into your scripts startup folder and enjoy with more than 50 sweet functions
+	to query arrays of any type, strings and dotNet IEnumerables.
 	
 	For a general overview, help and examples, key in:
-	maxLINQ.Help()							--	General overview and list of functions
+	maxLINQ.Help()				--	General overview and list of functions
 	maxLINQ.helpFN "<function name>":	--	help on each maxLINQ function and examples
-	maxLINQ.helpFN "LA"					--	help on LambdExpressions syntax
-	maxLINQ.helpMAN()						--	help on maxLINQ Manager Functions
+	maxLINQ.helpFN "LA"			--	help on LambdExpressions syntax
+	maxLINQ.helpMAN()			--	help on maxLINQ Manager Functions
 	----------------------------------------------
 	----------------------------------------------
 	For highlighting main commands in your maxScript editor, copy the following lines into your MXS_EditorUser.properties
