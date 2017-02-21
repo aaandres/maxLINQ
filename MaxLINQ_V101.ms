@@ -3632,18 +3632,17 @@
 	LAMBDA EXPRESSIONS SYNTAX
 			-- Lambda Expressions Syntax: (valid as names #' ' and strings \" \")
 			-- (#'[q,s,i,key,d,ci:] var => <var expression>')  : applies <var expression> to each 'var' element of the array
-			-- (#'[q,s,i,index,obj:] var => <var [obj,index] expression>')  : applies <var [obj,index] expression> to each 'var' element of the array
-			-- #(extVar, #'[q,s,i,index,obj,key,d,ci:] var extVar => <var and extVar expression')  : applies <var and extVar expression> to each 'var' element of the array where 'extVar' is an external variable
-			-- (#'[q,s,i:] property var => <var expression>')  : applies <var expression> to each 'var' element wich represents a 'property' of the defined type
-			-- (#'[q,s,i,index,d,ci:]) : applies these modifiers to the query without any lambda expression
+			-- #(extVar, #'[q,s,i,key,d,ci:] var extVar => <var and extVar expression')  : applies <var and extVar expression> to each 'var' element of the array using 'extVar' that is an external local variable
+			-- (#'[q,s,i,key:] property var => <var expression>')  : applies <var expression> to each 'var' element wich represents a 'property' of the defined type
+			-- (#'[q,s,i,d,ci:]) : applies these modifiers to the query without any lambda expression
 			-- #() : applies no modifier to the query
+			-- In some functions, Lambda expression can use 'obj' and 'index' variables (without the need to define them) that reference to the maxObjects of the query and to the index of the element array respectively.
 		MODIFIERS	
-			-- Modifiers [q,s,i,index,obj,key,d,ci:]:
+			-- Modifiers [q,s,i,key,d,ci:]:
 				-- Syntax: separated by comas (',') if more than one and ended by colon (':')
 				-- q: indicates that it's not the last function in the query. Thus, the returned value will be a struct, not an array. Valid in all Query and Filter functions.
 				-- s: works in subarray elements if the array is a multiarray (valid in most query functions). For subarray calculations, items must be real arrays (not objectSets, bitArrays...)
 				-- i: returns indices of elements instead of the elements value (valid in most query functions)
-				-- obj: only valid in the  '_Where' and 'Select' functions (and derivatives 'sum', 'count', 'average', '_min' and '_max').Allows to use the variable 'obj' in the lambda expression which holds the maxObject element of a previous query with 'mappedProperty' or 'mappedGeometry'.
 				-- key: only valid in the 'mappedProperty', 'mappedGeometry', 'Select' and 'GroupBy' functions. The result query will be an array of 'lookUp' structs with 3 parameters: key, value and count (see each case in their respective help).
 				-- d: only valid in the 'Sort' query function. The sort will be done in descending order
 				-- ci: The comparisons will be case Insensitive for strings. NOTE: all functions are CaseSensitive by default(valid in some query functions)
